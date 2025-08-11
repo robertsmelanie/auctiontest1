@@ -3,7 +3,6 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import cors from 'cors';
 import OpenAI from 'openai';
 
 const app = express();
