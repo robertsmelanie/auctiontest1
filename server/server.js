@@ -112,7 +112,7 @@ app.post('/generate', upload.single('image'), async (req, res) => {
         res.json({ markdown: text });
     } catch (err) {
         console.error(err);
-        res.status(500).json({ error: err?.message || 'Unexpected error' });
+        res.status(400).json({ error: err?.message || 'Unexpected error' });
     }
 });
 
