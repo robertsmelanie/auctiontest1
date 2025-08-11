@@ -115,6 +115,8 @@ app.post('/generate', upload.single('image'), async (req, res) => {
         res.status(400).json({ error: err?.message || 'Unexpected error' });
     }
 });
+// health check
+app.get('/health', (_req, res) => res.json({ ok: true }));
 
 const PORT = process.env.PORT || 8787;
 app.listen(PORT, () => console.log(`Server listening on http://localhost:${PORT}`));
