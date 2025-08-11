@@ -3,9 +3,9 @@
 //   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
     // <script src="script.js" type="module"></script>
       
-import marked from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-import marked from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
-out.innerHTML = marked.parse(md); 
+// import marked from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+// import marked from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
+
 
     const $ = (id) => document.getElementById(id);
     const fileEl = $('file');
@@ -94,4 +94,6 @@ async function generateListing(file, description) {
       }
     }
 
-    goBtn.addEventListener('click', generate);
+goBtn.addEventListener('click', generate);
+    
+// out.innerHTML = marked.parse(md); 
