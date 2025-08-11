@@ -26,7 +26,7 @@ const upload = multer({
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // --- Your C.R.A.F.T. prompt as a function so we can inject fields ---
-function craftPrompt({ imageDataUrl, itemDescription }) {
+function craftPrompt({ itemDescription }) {
     return `
 Context:
 You have been provided with an image or textual description of an item to be sold at auction. Your job is to create a full, professional auction listing—including title, category, condition report, provenance, detailed history, and persuasive copy—so bidders feel compelled to place competitive bids.
