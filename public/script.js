@@ -1,8 +1,12 @@
   //  !--marked.js for Markdown rendering-- >
       
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
+//   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" crossorigin="anonymous"></script>
     // <script src="script.js" type="module"></script>
       
+import marked from 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+import marked from 'https://cdn.jsdelivr.net/npm/marked/lib/marked.esm.js';
+out.innerHTML = marked.parse(md); 
+
     const $ = (id) => document.getElementById(id);
     const fileEl = $('file');
     const thumb = $('thumb');
