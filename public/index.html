@@ -7,6 +7,43 @@
 </head>
 <body>
     <h1>Auction web app test 1</h1>
+<div class="wrap">
+    <h1 class="title">Auction Listing Generator</h1>
+    <div class="sub">Drop an image + optional notes. Get a polished, bid-ready Markdown listing.</div>
+
+    <div class="grid">
+        <div class="card">
+            <label>Item Image</label>
+            <input id="file" type="file" accept="image/*" />
+            <div class="row small muted"><span>JPG/PNG/WebP are fine.</span><span id="filesize" class="muted"></span>
+            </div>
+            <div id="thumb" class="thumb muted">No image yet</div>
+
+            <label style="margin-top:18px;">Optional notes / item description</label>
+            <textarea id="desc"
+                placeholder="e.g., 'Signed on base, bought at estate sale; circa 1920-30; small chip under rim.'"></textarea>
+
+            <div class="row">
+                <button id="go"><span class="spinner" style="display:none"></span><span>Generate Listing</span></button>
+                <span id="status" class="muted"></span>
+            </div>
+            <div id="error" class="danger small" style="margin-top:8px;"></div>
+        </div>
+
+        <div class="card">
+            <div class="row">
+                <strong>Output (Markdown)</strong>
+                <button id="copy">Copy</button>
+            </div>
+            <div id="out" class="markdown-body out" style="margin-top:12px;"></div>
+        </div>
+    </div>
+
+    <p class="muted small" style="margin-top:24px">
+        Uses OpenAI’s Responses API with image+text input (gpt-4o / o4-mini). See docs: Images & Vision, Quickstart, and
+        Text guides.
+    </p>
+</div>
 
 </body>
 </html>
