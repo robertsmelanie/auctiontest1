@@ -1,6 +1,8 @@
 import 'dotenv/config';
 import express from 'express';
 import multer from 'multer';
+import from path from 'path';
+import { fileURLToPath } from 'url';
 import cors from 'cors';
 import { readFile } from 'fs/promises';
 import OpenAI from 'openai';
