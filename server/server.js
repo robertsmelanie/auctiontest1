@@ -85,7 +85,7 @@ app.post('/generate', upload.single('image'), async (req, res) => {
         const userPrompt = craftPrompt({ imageDataUrl: dataUrl, itemDescription: description });
 
         // Responses API request (text + image)
-        // Docs: OpenAI Responses + Images/Vision guides. :contentReference[oaicite:0]{index=0}
+        // Docs: OpenAI Responses + Images/Vision guides. {index=0}
         const response = await openai.responses.create({
             model: "gpt-4o", // or "o4-mini" for cheaper/faster. :contentReference[oaicite:1]{index=1}
             input: [
