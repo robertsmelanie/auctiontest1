@@ -82,7 +82,7 @@ app.post('/generate', upload.single('image'), async (req, res) => {
         }
 
         const systemPreamble = "You are a meticulous auction cataloguer. Output strictly in Markdown as requested.";
-        const userPrompt = craftPrompt({ imageDataUrl: dataUrl, itemDescription: description });
+        const userPrompt = craftPrompt({ itemDescription: description });
 
         // Responses API request (text + image)
         // Docs: OpenAI Responses + Images/Vision guides. {index=0}
