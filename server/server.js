@@ -12,7 +12,17 @@ const _filename = fileURLToPath(import.meta.url);
 const _dirname = path.dirname(_filename);
 app.use(express.static(path.join(_dirname, '..', 'public')));
 
-const upload = multer({ storage: multer.memoryStorage() });
+// const upload = multer({ storage: multer.memoryStorage() });
+// Multer setup with basic guards
+const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: { fileSize: 8 * 1024 * 1024 }, // 8 MB
+    fileFilter: (_req, file, cb) => {
+        const ok = ['image/jpeg', 'image/png', 'image/webp'].includes(file.mimetype);
+        cb(ok ? null : new Error('Only JPG, PNG, or WebP images are allowed'));
+    }
+});
+
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 // --- Your C.R.A.F.T. prompt as a function so we can inject fields ---
