@@ -72,7 +72,7 @@ async function generateListing(file, description) {
       try {
         const form = new FormData();
         if (fileBlob) form.append('image', fileBlob, fileBlob.name);
-        form.append('description', descEl.value.trim());
+        form.append('description', (descEl.value || '') .trim());
 
         const res = await fetch('http://localhost:8787/generate', {
           method: 'POST',
