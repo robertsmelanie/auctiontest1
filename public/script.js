@@ -39,7 +39,20 @@
       try { await navigator.clipboard.writeText(raw); statusEl.textContent = 'Copied!'; setTimeout(()=>statusEl.textContent='',1200); }
       catch { statusEl.textContent = 'Copy failed'; }
     });
+// test add per examples
+async function generateListing(file, description) {
+    const form = new FormData();
+    if (file) form.append('image', file, file.name);
+    if (description) form.append('description', description);
 
+    const res = await fetch('/generate', { method: 'POST', body: form });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Generation failed');
+    return data.markdown;
+}
+
+
+// original code
     async function generate() {
       errEl.textContent = '';
       out.textContent = '';
